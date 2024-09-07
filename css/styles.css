@@ -1,0 +1,600 @@
+/* ----------- Definir Variables de CSS ----------- */
+:root {
+    --primary-color: #333;
+    --secondary-color: #444;
+    --text-color: #fff;
+    --background-color: #921F1E;
+    --card-background: #fff;
+    --card-border-color: #ddd;
+    --hover-scale: 1.05;
+    --font-family: 'Arial', sans-serif;
+    --font-size: 16px;
+    --card-padding: 15px;
+    --menu-padding: 10px;
+    --menu-link-padding: 15px;
+    --menu-border-color: #444;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --gutter-width: 15px; /* Espaciado entre columnas */
+}
+
+/* ----------- Normalización básica ----------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--font-size);
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.5;
+    background-color: var(--background-color);
+}
+
+/* Asegurar que las imágenes y vídeos sean responsivos */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Eliminar estilos por defecto de listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Eliminar subrayado y colores por defecto de enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ajustar el estilo por defecto de los elementos de formulario */
+input, button, textarea, select {
+    font-family: inherit;
+    font-size: 100%;
+    outline: none;
+    border: none;
+}
+
+/* ----------- Estilos de la Barra de Navegación ----------- */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 40px;
+    margin-right: 15rem;
+}
+
+.navbar-toggler {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+/* Contenedor del menú colapsable */
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1; /* Asegura que el menú ocupe el espacio disponible */
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: var(--text-color);
+    padding: var(--menu-link-padding);
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--secondary-color);
+    border-radius: 0.25rem;
+}
+
+/* ----------- Sistema de Columnas ----------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--gutter-width);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(var(--gutter-width) * -0.5);
+    margin-left: calc(var(--gutter-width) * -0.5);
+}
+
+.col {
+    padding-right: calc(var(--gutter-width) * 0.5);
+    padding-left: calc(var(--gutter-width) * 0.5);
+    flex-basis: 100%; /* 100% en pantallas pequeñas */
+}
+
+.col-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+.col-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+.col-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+.col-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+.col-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+.col-9 { flex: 0 0 75%; max-width: 75%; }
+.col-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+.col-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+
+/* ----------- Estilos para Cards Responsivas ----------- */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Opcional: para centrar verticalmente */
+}
+
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    padding: var(--card-padding);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.card-img {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px;
+    border-radius: 50%; /* Hace la imagen redonda */
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.card-content {
+    color: #666;
+}
+
+/* ----------- Clase para Centrado Horizontal ----------- */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ----------- Clases para ajustes (similar a Bootstrap) ----------- */
+/* Margin top */
+.mt-1 { margin-top: 1em; }
+.mt-2 { margin-top: 2em; }
+.mt-3 { margin-top: 3em; }
+.mt-4 { margin-top: 4em; }
+.mt-5 { margin-top: 5em; }
+
+/* Margin bottom */
+.mb-1 { margin-bottom: 1em; }
+.mb-2 { margin-bottom: 2em; }
+.mb-3 { margin-bottom: 3em; }
+.mb-4 { margin-bottom: 4em; }
+.mb-5 { margin-bottom: 5em; }
+
+/* Padding top */
+.pt-1 { padding-top: 1em; }
+.pt-2 { padding-top: 2em; }
+.pt-3 { padding-top: 3em; }
+.pt-4 { padding-top: 4em; }
+.pt-5 { padding-top: 5em; }
+
+/* Padding bottom */
+.pb-1 { padding-bottom: 1em; }
+.pb-2 { padding-bottom: 2em; }
+.pb-3 { padding-bottom: 3em; }
+.pb-4 { padding-bottom: 4em; }
+.pb-5 { padding-bottom: 5em; }
+
+/* ----------- Responsive Design ----------- */
+/* Extra Small (XS): Menor a 576px */
+@media (max-width: 575.98px) {
+    .col {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column; /* Alinea logo y menú verticalmente */
+        padding: 10px;
+        position: relative; /* Asegura que el menú se posicione relativo al contenedor */
+    }
+
+    .navbar-brand {
+        margin-bottom: 10px; /* Espacio entre el logo y el botón de colapso */
+    }
+
+    .navbar-toggler {
+        display: block;
+        margin-bottom: 10px; /* Espacio entre el botón de colapso y el menú */
+    }
+
+    .navbar-collapse {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column;
+        width: 100%; /* Asegura que el menú ocupe el ancho completo */
+        position: absolute; /* Posiciona el menú debajo del contenedor */
+        top: 100%; /* Coloca el menú justo debajo de la barra de navegación */
+        left: 0; /* Alinea el menú a la izquierda */
+        background-color: var(--primary-color); /* Asegura que el fondo del menú coincida con el de la barra de navegación */
+        z-index: 1000; /* Asegura que el menú aparezca sobre otros elementos */
+    }
+
+    .navbar-collapse.show {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%; /* Asegura que el menú ocupe el ancho completo */
+        text-align: center; /* Centra el texto en el menú desplegable */
+    }
+
+    .nav-item {
+        width: 100%; /* Asegura que los ítems del menú ocupen el ancho completo */
+    }
+
+    .nav-link {
+        padding: 15px;
+        display: block; /* Asegura que el enlace ocupe el ancho completo */
+    }
+
+    .card-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Small (SM): Pantallas de 576px o más */
+@media (min-width: 576px) {
+    .col-sm-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+    .col-sm-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+    .col-sm-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-sm-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+    .col-sm-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+    .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-sm-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+    .col-sm-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+    .col-sm-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-sm-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+    .col-sm-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+    .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-collapse {
+        display: flex;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+    .nav-item {
+        width: auto;
+    }
+
+    .card-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .card {
+        max-width: 300px;
+    }
+}
+
+/* Medium (MD): Pantallas de 768px o más */
+@media (min-width: 768px) {
+    .col-md-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+    .col-md-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+    .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-md-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+    .col-md-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+    .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-md-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+    .col-md-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+    .col-md-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-md-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+    .col-md-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+    .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-collapse {
+        display: flex;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+    .nav-item {
+        width: auto;
+    }
+
+    .card-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .card {
+        max-width: 300px;
+    }
+}
+
+/* Large (LG): Pantallas de 992px o más */
+@media (min-width: 992px) {
+    .col-lg-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+    .col-lg-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+    .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-lg-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+    .col-lg-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+    .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-lg-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+    .col-lg-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+    .col-lg-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-lg-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+    .col-lg-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+    .col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* ----------- Estilos específicos para el formulario de login ----------- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Opcional: para centrar verticalmente */
+}
+
+.login-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px; /* Ajusta el tamaño máximo de la card de login */
+    padding: var(--card-padding);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.login-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.login-card-input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.login-card-button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.login-card-button:hover {
+    background-color: var(--secondary-color);
+}
+/* ----------- Botones Estilo Bootstrap ----------- */
+
+/* Botón Primario */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    line-height: 1.5;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Botón Primario (Versión específica para login) */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Botón Secundario */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* Botón Éxito */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Botón Advertencia */
+.btn-warning {
+    background-color: #F68A11;
+    border-color: #F68A11;
+}
+
+.btn-warning:hover {
+    background-color: #d38327;
+    border-color: #d38327;
+}
+
+/* Botón Peligro */
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Botón Info */
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* Botón Ligero */
+.btn-light {
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    color: #212529;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+}
+
+/* Botón Oscuro */
+.btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-dark:hover {
+    background-color: #23272b;
+    border-color: #1d2124;
+}
+
+/* Botón de Enlace */
+.btn-link {
+    font-weight: 400;
+    color: #007bff;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.btn-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* ----------- Estilo Específico para el Login ----------- */
+.login-card-button {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem; /* Tamaño del padding */
+    line-height: 1.5;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.login-card-button:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Botón de Carga (Opcional, para estados de carga) */
+.btn-loading {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.btn-loading::after {
+    content: '...'; /* Añade puntos suspensivos para indicar carga */
+}

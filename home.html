@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="./css/styles.css"> <!-- Asegúrate de que el CSS esté vinculado -->
+</head>
+<body>
+  <!-- Barra de Navegación -->
+  <header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="./img/greydimar.jpg" alt="Logo" class="navbar-logo" loading="lazy"> <!-- Logo SVG -->
+            </a>
+            <button class="navbar-toggler" id="menu-toggle">
+                &#9776; <!-- Icono de hamburguesa -->
+            </button>
+            <div class="navbar-collapse" id="navbar-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#about" class="nav-link">Sobre mí</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Servicios</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="./index.html" class="nav-link">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+      
+  </header>
+
+  <!-- Card -->
+  <main>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="card">
+            <h3 class="card-title">!Hola¡ Mi nombre es Greydimar Crespo</h3>
+            <img src="./img/greydimar.jpg" alt="Imagen" class="card-img" loading="lazy">
+            <p class="card-content">Soy diseñadora integral e ilustradora actualmente
+                me dedico a ilustrar, pero realizo trabajos en 
+                otras áreas de manera independiente, como 
+                la fotografìa y el diseño gràfico, tambien me 
+                encuentro en la última etapa de mi carrera 
+                siendo uno de mis mayores sueño en 
+                alcanzar en la vida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script para el menú desplegable -->
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      var menu = document.getElementById('navbar-menu');
+      menu.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
